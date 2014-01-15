@@ -1,0 +1,39 @@
+safe: true
+lsi: false
+pygments: true
+source: .
+url: https://thinking.ameriwether.com
+title: Thinking Considered Harmful
+subtitle: The Technical Musings of Aaron Meriwether
+author: Aaron Meriwether
+email: me@ameriwether.com
+gravatar: 5f8d06524206be02374e12248c4aca51
+disqus: thinking-awirtz-com
+links: {
+    Gists: {
+        "https://gist.github.com/": {
+            1239069: Run process in other X session,
+            1311172: Evade AD password reset timer,
+            8213727: Extract Symantec VIP Access key,
+        },
+    },
+    Repos: {
+        "https://github.com/": {
+            p120ph37/blowfish.js: Blowfish with CBC in JS,
+            p120ph37/node-jsdoc-toolkit: JSDoc port for Node.js,
+            p120ph37/darwin-racoon-cisco-cert-fix: Patched OSX IPSEC VPN client,
+            p120ph37/libfb-bsd: Framebuffer access for FreeBSD,
+            p120ph37/SoftGC: Application-layer GC for Java,
+            p120ph37/java-1.7.0-sun-compat: JPackage compat for Sun JDK7,
+        },
+    },
+    Links: {
+        "": {
+            "https://resume.ameriwether.com/": Resumé,
+            "https://www.linkedin.com/in/meriwether": LinkedIn,
+            "https://github.com/p120ph37": GitHub,
+            "https://www.facebook.com/awirtz": Facebook,
+            "https://careers.stackoverflow.com/ameriwether": Careers 2.0,
+        },
+    },
+}

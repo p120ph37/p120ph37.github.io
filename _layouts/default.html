@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/css/pygment.css"/>
+		<link rel="stylesheet" href="/css/theme.css"/>
+		<title>{{ site.title }} - {% if page.title %}{{ page.title }}{% else %}{{ site.subtitle }}{% endif %}</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="title">
+				<a name="top" title="{{ site.title }}" href="{{ site.url }}">
+					<h1>{{ site.title }}</h1>
+					<h2>{{ site.subtitle }}</h2>
+				</a>
+			</div>
+			<div id="footer">
+				<div id="impressum">
+					<span class="nobr">&copy;{{ site.time | date_to_string | split: ' ' | last }} <a href="#" data-email="&quot;{{ site.author }}&quot; &lt;{{ site.email | replace:'@','*' }}&gt;">{{ site.author }}</a>. </span>
+					<span class="nobr">Powered by <a href="http://jekyllrb.com">Jekyll</a>, </span>
+					<span class="nobr">hosted by <a href="http://github.com">GitHub</a>, </span>
+					<span class="nobr">comments powered by <a href="http://disqus.com">Disqus</a>.</span>
+				</div>
+			</div>
+			<div id="content">
+				{{ content }}
+				{% include sidebar.html %}
+			</div>
+		</div>
+		<script>
+			<!--
+
+			// De-obfuscate email links
+			var links = document.getElementsByTagName('a');
+			for(var i = 0; i < links.length; i++)
+				if(links[i].getAttribute('data-email') != null)
+					links[i].href = 'mailto:' + links[i].getAttribute('data-email').replace(/\*/, '@');
+
+			// Resize content area to avoid overflow of sidebar.
+			document.getElementById('content').style.cssText = 'min-height: ' + document.getElementById('sidebar').offsetHeight + 'px;';
+
+			//-->
+		</script>
+	</body>
+</html>

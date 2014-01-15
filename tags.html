@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{% for tag in site.tags %}
+<div class="tag" id="{{ tag[0] }}">
+	<a name="{{ tag[0] }}"><h1>{{ tag[0] }}</h1></a>
+	<ul>
+		{% for p in tag[1] %}
+		<li>
+			<div class="excerpt">
+				<h2>{{ p.title }}<small> - {{ p.date | date:"%d/%b/%Y" }}</small></h2>
+				{{ p.excerpt }}...
+				<a class="postlink" href="{{ p.url }}">Read more...</a>
+			</div>
+			<hr/>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endfor %}
+<script>
+	<!--
+
+	var hideTags = function(){
+		// Hide non-matching tags
+		var fragment = (document.location.hash || '').replace(/^#/, '');
+		if(fragment.length > 0) {
+			var tags = document.getElementsByClassName('tag');
+			for(var i = 0; i < tags.length; i++)
+				tags[i].style.cssText = tags[i].getAttribute('id') == fragment ? 'display: block;' : 'display: none;';
+		}
+		// If JavaScript is working, we don't need to be scrolled to the anchor.
+		var unscroll = function() {
+			window.scroll(0, 0);
+			window.removeEventListener('scroll', unscroll);
+		};
+		window.addEventListener('scroll', unscroll);
+	};
+	
+	window.addEventListener('load', hideTags);
+	window.addEventListener('hashchange', hideTags);
+
+	//-->
+</script>
