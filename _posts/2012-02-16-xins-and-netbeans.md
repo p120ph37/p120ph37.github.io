@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [Java]
+title: XINS and NetBeans
 ---
 There are many ways to build
 [Web Services](http://en.wikipedia.org/wiki/Web_service)
@@ -80,51 +81,48 @@ how to use it effectively with an IDE.  However, now that I've finished
 setting it up with NetBeans, it works nicely, and I thought I'd share this
 short tutorial for the benefit of others.
 
-*   First, download and install the Java EE version of
+-   First, download and install the Java EE version of
     [NetBeans](http://netbeans.org/downloads/index.html).
-*   Open NetBeans and add a few filename associations (in Preferences -> Misc.
+-   Open NetBeans and add a few filename associations (in Preferences -> Misc.
     -> Files) for "fnc", "typ", "rcd" and "cat" as "XML Files (text/xml)".
-*   Then close NetBeans and
+-   Then close NetBeans and
     [download XINS](http://sourceforge.net/projects/xins/files/latest/download?source=files).
-*   Pick some reasonable location to unzip it.  I chose to place mine inside
+-   Pick some reasonable location to unzip it.  I chose to place mine inside
     `.netbeans` in my user directory ( `~/.netbeans/` ).
-*   Edit the (possibly non-existant) file `~/.netbeans/7.1/etc/netbeans.conf`
+-   Edit the (possibly non-existant) file `~/.netbeans/7.1/etc/netbeans.conf`
     (of course the "7.1" part may be different if you installed a newer
-    version) and add a line which specifies the XINS location like this:
-    <strong>export XINS_HOME=~/.netbeans/xins-2.3</strong>
-*   Re-open NetBeans and in Tools -> DTDs and XML Schemas add the OASIS
+    version) and add a line which specifies the XINS location like this:  
+    `export XINS_HOME=~/.netbeans/xins-2.3`
+-   Re-open NetBeans and in Tools -> DTDs and XML Schemas add the OASIS
     catalog (note, if you put the XINS installation inside your `~/.netbeans`
     folder, you will not be able to browse to it, but you can type in the full
     path manually.  Also, you cannot use the "~" macro here - the path must
-    be absolute.):
-    <strong>file:/Users/awirtz/.netbeans/xins-2.3/src/dtd/xinsCatalog.xml</strong>
+    be absolute.):  
+    `file:/Users/awirtz/.netbeans/xins-2.3/src/dtd/xinsCatalog.xml`
 
 Now XINS and NetBeans are installed and configured and you can start a new project.
 
-*   In a terminal window, use "export XINS_HOME=~/.netbeans/xins-2.3" or the
+-   In a terminal window, use "export XINS_HOME=~/.netbeans/xins-2.3" or the
     "set" command (Windows) to set the XINS home directory for this session.
     If you wanted, you could make this a system-wide setting, but I personally
     prefer not to unnecessarily clutter my environment variables.
-*   Follow the tutorial instructions found
+-   Follow the tutorial instructions found
     [here](http://xins.sourceforge.net/primers/primer.html), except for the
     adjustments listed below.
-*   Before step 4:
-    *   Now that you have the skeleton of an API created, you can configure it
+-   Before step 4:
+    +   Now that you have the skeleton of an API created, you can configure it
         so the rest of the steps can be done in the IDE.
-    *   Unpack
-        [these files](https://github.com/p120ph37/XINS-NB/zipball/master) into
-        your apis/myapi directory, and then open that directory in NetBeans as
-        a project.
-*   Right-click on the nbbuild.xml file and select the "update-nb-files"
-        target.
-*   Note on step 4: You can find and edit the "fnc" file via the "Files" tab
-    in the NetBeans project pane.
-*   Instead of steps 5-7, you can right-click on the project and select
-    "Generate Specdocs" and the docs should build and the browser should pop
-    up automatically.
-*   Instead of step 11, you can right-click on the project and select
-    "Generate Javadocs".
-*   Instead of steps 12-13, you can simply run the project.
-*   Instead of step 16, you can click the red square (stop) icon next to the
-    console output in NetBeans to stop the app.
-*   Again, instead of step 18, you can simply run the project.
+    +   Unpack [these files](https://github.com/p120ph37/XINS-NB/zipball/master)
+        into your apis/myapi directory, and then open that directory in NetBeans
+        as a project.
+-   Right-click on the nbbuild.xml file and select the "update-nb-files" target.
+-   Note on step 4: You can find and edit the "fnc" file via the "Files" tab in
+    the NetBeans project pane.
+-   Instead of steps 5-7, you can right-click on the project and select "Generate
+    Specdocs" and the docs should build and the browser should pop up automatically.
+-   Instead of step 11, you can right-click on the project and select "Generate
+    Javadocs".
+-   Instead of steps 12-13, you can simply run the project.
+-   Instead of step 16, you can click the red square (stop) icon next to the console
+    output in NetBeans to stop the app.
+-   Again, instead of step 18, you can simply run the project.

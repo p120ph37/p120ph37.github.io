@@ -1,6 +1,7 @@
 ---
 layout: post
-tags: [Javascript]
+tags: [JavaScript]
+title: Discovering Node.js
 ---
 Sometime last year I came across
 [Node.js](http://nodejs.org), the server-side port of
@@ -59,20 +60,20 @@ lines of code:
 var cache = {};
 var net = require('net');
 var server = net.createServer(function (stream) {
-	var buffer = '';
-	var host = stream.remoteAddress + ':' + stream.remotePort;
-	stream.setEncoding('utf8');
-	stream.on('data', function (data) {
-		buffer = buffer + data;
-		var lines = buffer.split(/\r?\n/);
-		if(lines.length > 1) {
-			buffer = lines[1];
-			console.log('Request from ' + host + ': ' + lines[0]);
-			var parts = lines[0].split(/=/);
-			stream.write(parts[0] + '=' + cache[parts[0]] + '\n');
-			if(parts[1] != null) cache[parts[0]] = parts[1];
-		}
-	});
+    var buffer = '';
+    var host = stream.remoteAddress + ':' + stream.remotePort;
+    stream.setEncoding('utf8');
+    stream.on('data', function (data) {
+        buffer = buffer + data;
+        var lines = buffer.split(/\r?\n/);
+        if(lines.length > 1) {
+            buffer = lines[1];
+            console.log('Request from ' + host + ': ' + lines[0]);
+            var parts = lines[0].split(/=/);
+            stream.write(parts[0] + '=' + cache[parts[0]] + '\n');
+            if(parts[1] != null) cache[parts[0]] = parts[1];
+        }
+    });
 });
 {% endhighlight %}
 
@@ -141,16 +142,16 @@ restated in a more object-oriented manner:
  * function.
  */
 var lineParser = function(callback) {
-	this.callback = callback;
-	this.buffer = '';
+    this.callback = callback;
+    this.buffer = '';
 };
 lineParser.prototype.addData = function(data) {
-	this.buffer = this.buffer + data;
-	var lines = this.buffer.split(/\r?\n/);
-	if(lines.length > 1) {
-		this.buffer = lines[1];
-		this.callback( lines[0] );
-	}
+    this.buffer = this.buffer + data;
+    var lines = this.buffer.split(/\r?\n/);
+    if(lines.length > 1) {
+        this.buffer = lines[1];
+        this.callback( lines[0] );
+    }
 };
 
 /*
@@ -161,15 +162,15 @@ lineParser.prototype.addData = function(data) {
 var cache = {};
 var net = require('net');
 var server = net.createServer(function(stream) {
-	var host = stream.remoteAddress + ':' + stream.remotePort;
-	stream.setEncoding('utf8');
-	var lp = new lineParser(function(line) {
-		console.log('Request from ' + host + ': ' + line);
-		var parts = line.split(/=/);
-		stream.write(parts[0] + '=' + cache[parts[0]] + '\n');
-		if(parts[1] != null) cache[parts[0]] = parts[1];
-	});
-	stream.on('data', function(data) { lp.addData(data); });
+    var host = stream.remoteAddress + ':' + stream.remotePort;
+    stream.setEncoding('utf8');
+    var lp = new lineParser(function(line) {
+        console.log('Request from ' + host + ': ' + line);
+        var parts = line.split(/=/);
+        stream.write(parts[0] + '=' + cache[parts[0]] + '\n');
+        if(parts[1] != null) cache[parts[0]] = parts[1];
+    });
+    stream.on('data', function(data) { lp.addData(data); });
 });
 {% endhighlight %}
 

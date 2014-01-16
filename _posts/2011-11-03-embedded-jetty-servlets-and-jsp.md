@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [Java]
+title: Embedded Jetty Servlets and JSP
 ---
 Recently I had been using [Tomcat](http://tomcat.apache.org/) as a
 [Java Servlet](http://en.wikipedia.org/wiki/Java_Servlet) container for a

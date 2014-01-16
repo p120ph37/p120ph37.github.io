@@ -1,6 +1,7 @@
 ---
 layout: post
-tags: [Javascript]
+tags: [JavaScript]
+title: JavaScript Function Chaining
 ---
 From time to time when working with JavaScript, I come across situations where
 I want to extend some existing function.  Sometimes this function is defined in
@@ -27,9 +28,9 @@ Something like this perhaps:
  */
 // wait until the document has finished loading.
 window.onload = function() {
-	// get the titlebar element and replace its content with an image tag.
-	document.getElementById('titlebar').innerHTML =
-		'<img src="titlebar.png" />';
+    // get the titlebar element and replace its content with an image tag.
+    document.getElementById('titlebar').innerHTML =
+        '<img src="titlebar.png" />';
 };
 {% endhighlight %}
 
@@ -51,11 +52,11 @@ apply this to the above example might look something like this:
 var old_onload = window.onload;
 // wait until the document has finished loading.
 window.onload = function() {
-	// execute the previous onload function (if it exists) before our own code.
-	if(old_onload != null) old_onload();
-	// get the titlebar element and replace its content with an image tag.
-	document.getElementById('titlebar').innerHTML =
-		'<img src="titlebar.png" />';
+    // execute the previous onload function (if it exists) before our own code.
+    if(old_onload != null) old_onload();
+    // get the titlebar element and replace its content with an image tag.
+    document.getElementById('titlebar').innerHTML =
+        '<img src="titlebar.png" />';
 };
 {% endhighlight %}
 
@@ -72,14 +73,14 @@ document.onclick = null; // clear any previous mess you made
 
 var old_onclick = document.onclick;
 document.onclick = function() {
-	if(old_onclick != null) old_onclick();
-	console.log('Function 1 sees a click!');
+    if(old_onclick != null) old_onclick();
+    console.log('Function 1 sees a click!');
 };
 
 var old_onclick = document.onclick;
 document.onclick = function() {
-	if(old_onclick != null) old_onclick();
-	console.log('Function 2 sees a click!');
+    if(old_onclick != null) old_onclick();
+    console.log('Function 2 sees a click!');
 };
 {% endhighlight %}
 
@@ -93,15 +94,15 @@ document.onclick = null; // clear any previous mess you made
 
 var old_onclick1 = document.onclick;
 document.onclick = function(e) {
-	if(old_onclick1 != null) old_onclick1();
-	console.log('Function 1 sees a click!');
-	console.log('Click coordinates: '+e.clientX+','+e.clientY);
+    if(old_onclick1 != null) old_onclick1();
+    console.log('Function 1 sees a click!');
+    console.log('Click coordinates: '+e.clientX+','+e.clientY);
 };
 
 var old_onclick2 = document.onclick;
 document.onclick = function() {
-	if(old_onclick2 != null) old_onclick2();
-	console.log('Function 2 sees a click!');
+    if(old_onclick2 != null) old_onclick2();
+    console.log('Function 2 sees a click!');
 };
 {% endhighlight %}
 
@@ -113,16 +114,16 @@ document.onclick = null; // clear any previous mess you made
 
 var old_onclick1 = document.onclick;
 document.onclick = function() {
-	if(old_onclick1 != null) old_onclick1();
-	console.log('Function 1 sees a click!');
-	console.log('this is: '+this);
+    if(old_onclick1 != null) old_onclick1();
+    console.log('Function 1 sees a click!');
+    console.log('this is: '+this);
 };
 
 var old_onclick2 = document.onclick;
 document.onclick = function() {
-	if(old_onclick2 != null) old_onclick2();
-	console.log('Function 2 sees a click!');
-	console.log('this is: '+this);
+    if(old_onclick2 != null) old_onclick2();
+    console.log('Function 2 sees a click!');
+    console.log('this is: '+this);
 };
 {% endhighlight %}
 
@@ -161,14 +162,14 @@ example:
  * prettytitle.js - Makes the titlebar into an image.
  */
 function(){ // Lambda expression for scope
-	var old_onload = window.onload; // local variable
-	window.onload = function() {
-		if(old_onload != null) {
-			// invoke the old handler, passing this and arguments properly.
-			old_onload.apply(this, arguments);
-		}
-		document.getElementById('titlebar').innerHTML =
-		'<img src="titlebar.png" />';
-	};
+    var old_onload = window.onload; // local variable
+    window.onload = function() {
+        if(old_onload != null) {
+            // invoke the old handler, passing this and arguments properly.
+            old_onload.apply(this, arguments);
+        }
+        document.getElementById('titlebar').innerHTML =
+        '<img src="titlebar.png" />';
+    };
 }(); // End of lambda expression and immediate invocation</pre>
 {% endhighlight %}

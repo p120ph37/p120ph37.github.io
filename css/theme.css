@@ -12,6 +12,7 @@ html,body{height:100%;width: 100%;}
 	background-color: #333;
 	background-image: linear-gradient(180deg, #555, transparent);
 	border: 2px #EEE solid;
+	font-family: Courier, monospace;
 }
 
 /* Disqus */
@@ -73,7 +74,7 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
 	position: relative;
 	padding: 8px 0 0 0;
 }
-#content .postlink {
+#content .postlink, #content .postlink:hover {
 	position: absolute;
 	left: 0px; top: 0px; right: 0px;
 	margin: 0 -24px 0 -24px;
@@ -81,7 +82,7 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
 	color: transparent !important;
 	background-color: transparent;
 	background-image: linear-gradient(180deg, rgba(255,255,255,0) 24px, rgba(255,255,255,0.8) 28px, #FFF);
-	border none; border-bottom: 2px solid #EEE;
+	border: none; border-bottom: 2px solid #EEE; border-radius: 0;
 }
 #content .postlink:hover { background-image: linear-gradient(180deg, rgba(127, 191, 255, 0.5), #FFF); }
 #content a { color: #69C; }
@@ -95,7 +96,10 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
 #content h6 { font-size: 8px; text-shadow: 1px 1px #CCC; }
 #content p { font-size: 12px; padding: 2px; margin: 1px 0 15px; }
 #content small { font-size: 60%; }
-#content ul,ol { margin: 1px 0 15px 24px; }
+#content ul,#content ol { margin: 1px 0 15px 24px; }
+#content li>ul,#content li>ol { margin: 1px 0 1px 24px; }
+#content code { font-size: 12px; color: #777; font-family: Courier, monospace; }
+#content pre { font-size: 12px; font-family: Courier, monospace; }
 #content .highlight { font-size: 12px; padding: 2px; margin: 1px 0 15px; }
 
 /* Sidebar formatting */

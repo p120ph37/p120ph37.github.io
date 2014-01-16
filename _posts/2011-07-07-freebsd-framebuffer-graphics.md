@@ -1,6 +1,7 @@
 ---
 layout: post
-tags: [C, FreeBSD]
+tags: [C]
+title: FreeBSD Framebuffer Graphics
 ---
 I just pushed a [new project](https://github.com/p120ph37/libfb-bsd) up to
 GitHub. It's the beginning of a console
