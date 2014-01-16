@@ -3,7 +3,7 @@ lsi: false
 pygments: true
 markdown: rdiscount
 source: .
-url: https://p120ph37.github.io
+url: https://thinking.ameriwether.com
 title: Thinking Considered Harmful
 subtitle: The Technical Musings of Aaron Meriwether
 author: Aaron Meriwether
@@ -30,10 +30,10 @@ links: {
     },
     Links: {
         "": {
-            "https://resume.ameriwether.com/": Resumé,
-            "https://www.linkedin.com/in/meriwether": LinkedIn,
             "https://github.com/p120ph37": GitHub,
             "https://www.facebook.com/awirtz": Facebook,
+            "https://www.linkedin.com/in/meriwether": LinkedIn,
+            "https://resume.ameriwether.com/": Resumé,
             "https://careers.stackoverflow.com/ameriwether": Careers 2.0,
         },
     },

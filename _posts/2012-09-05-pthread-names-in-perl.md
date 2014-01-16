@@ -75,7 +75,7 @@ require 'syscall.ph';
 use threads;
 print "parent PID: $$\n";
 async {
-    print "thread PID: ".syscall(&amp;SYS_gettid)."\n";
+    print "thread PID: ".syscall(&SYS_gettid)."\n";
 }->join();
 {% endhighlight %}
 
