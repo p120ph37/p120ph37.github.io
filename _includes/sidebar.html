@@ -1,23 +1,25 @@
 <div id="sidebar">
-	<div class="photo" style="background: url(//s.gravatar.com/avatar/{{ site.gravatar }}?s=160);"></div>
-	<div class="tab" id="Tags">
-		<h3>Tags</h3>
-		{% for i in site.tags %}
-		<div class="link">
-			<a href="/tags.html#{{ i[0] }}">{{ i[0] }} ({{ i[1].size }})</a>
+    <div id="caliper">
+		<div class="photo" style="background: url(//s.gravatar.com/avatar/{{ site.gravatar }}?s=160);"></div>
+		<div class="tab" id="Tags">
+			<h3>Tags</h3>
+			{% for i in site.tags %}
+			<div class="link">
+				<a href="/tags.html#{{ i[0] }}">{{ i[0] }} ({{ i[1].size }})</a>
+			</div>
+			{% endfor %}
+		</div>
+		{% for section in site.links %}
+		<div class="tab" id="{{ section[0] }}">
+			<h3>{{ section[0] }}</h3>
+			{% for base in section[1] %}
+			{% for link in base[1] %}
+			<div class="link">
+				<a href="{{ base[0] }}{{ link[0] }}">{{ link[1] }}</a>
+			</div>
+			{% endfor %}
+			{% endfor %}
 		</div>
 		{% endfor %}
 	</div>
-	{% for section in site.links %}
-	<div class="tab" id="{{ section[0] }}">
-		<h3>{{ section[0] }}</h3>
-		{% for base in section[1] %}
-		{% for link in base[1] %}
-		<div class="link">
-			<a href="{{ base[0] }}{{ link[0] }}">{{ link[1] }}</a>
-		</div>
-		{% endfor %}
-		{% endfor %}
-	</div>
-	{% endfor %}
 </div>
