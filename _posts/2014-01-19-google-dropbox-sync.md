@@ -84,6 +84,17 @@ So here is how to set it up on your Mac:
 6. Run this command to load the config:  
    `launchctl load -w ~/Library/LaunchAgents/gdrive-dropbox-sync.plist`
 
+A file in your home directory named `unison.log` should now start recording
+any synchronization events that occur.  You can save files to either your
+Dropbox folder or your Google Drive folder, and these changes will instantly
+propagate to the other.  This also applies to changes you make to these files
+from another computer or your mobile device - as long as your Mac is online
+(or as soon as it reconnects if it was offline), the changes will carry over.
+
+This means that you can edit a document on your Google Drive via Google
+Documents, and as soon as you save it, the change will appear on your Mac and
+then be copied over to your Dropbox automatically.
+
 [Mozy]: http://mozy.com/free
 [Dropbox]: https://www.dropbox.com
 [Google Drive]: https://drive.google.com
