@@ -57,7 +57,7 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
 }
 #content .excerpt {
-	height: 10em;
+	height: 3em;
 	font-size: 10px;
 	overflow: hidden;
 }
@@ -71,9 +71,9 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
 	left: 0px; top: 0px; right: 0px;
 	margin: 0 -24px 0 -24px;
 	height: 100%;
-	color: transparent !important;
+	color: transparent;
 	background-color: transparent;
-	background-image: linear-gradient(180deg, rgba(255,255,255,0) 24px, rgba(255,255,255,0.8) 28px, #FFF);
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 24px, rgba(255, 255, 255, 0.8) 28px, #FFF);
 	border: none; border-bottom: 2px solid #EEE; border-radius: 0;
 }
 #content .postlink:hover { background-image: linear-gradient(180deg, rgba(127, 191, 255, 0.5), #FFF); }
@@ -99,6 +99,15 @@ body { color: #000; font-family: "Lucida Grande", "Lucida Sans Unicode", sans-se
 	background-image: linear-gradient(180deg, #555, transparent);
 	border: 2px #EEE solid;
 }
+#content blockquote {
+	font-size: 12px;
+	color: #555; text-shadow: 1px 1px #EEE;
+	margin: 1px 0 15px;
+	padding: 15px;
+	background-color: rgba(127, 127, 127, 0.3);
+}
+#content blockquote>:first-child { margin-top: 0; }
+#content blockquote>:last-child { margin-bottom: 0; }
 
 /* Sidebar formatting */
 #sidebar {
