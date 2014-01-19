@@ -3,7 +3,7 @@ lsi: false
 pygments: true
 markdown: rdiscount
 source: .
-url: https://thinking.ameriwether.com
+url: http://thinking.ameriwether.com
 title: Thinking Considered Harmful
 subtitle: The Technical Musings of Aaron Meriwether
 author: Aaron Meriwether
