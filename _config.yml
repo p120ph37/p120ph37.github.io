@@ -1,6 +1,6 @@
 safe: true
 lsi: false
-pygments: true
+highlighter: pygments
 markdown: rdiscount
 source: .
 url: http://thinking.ameriwether.com
@@ -10,6 +10,7 @@ author: Aaron Meriwether
 email: me@ameriwether.com
 gravatar: 5f8d06524206be02374e12248c4aca51
 disqus: thinking-awirtz-com
+excerpt_separator: <!--more-->
 links: {
     Gists: {
         "https://gist.github.com/": {

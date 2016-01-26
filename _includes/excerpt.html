@@ -1,0 +1,8 @@
+<div class="post">
+	<h4 class="right">{{ p.tags | join:' | ' }}</h4>
+	<h2>{{ p.title }}<small> - {{ p.date | date:"%d/%b/%Y" }}</small></h2>
+	<div class="excerpt">
+		{{ p.excerpt | truncatewords:250 }}...
+	</div>
+	<a class="postlink" href="{{ p.url }}">more</a>
+</div>

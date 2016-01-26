@@ -8,13 +8,7 @@ title: Posts by Tag
     <h1>Posts about {{ tag[0] }}</h1>
     <hr/>
     {% for p in tag[1] %}
-    <div class="post">
-        <h2>{{ p.title }}<small> - {{ p.date | date:"%d/%b/%Y" }}</small></h2>
-        <div class="excerpt">
-            {{ p.excerpt }}...
-        </div>
-        <a class="postlink" href="{{ p.url }}">more</a>
-    </div>
+    {% include excerpt.html %}
     {% endfor %}
 </div>
 {% endfor %}

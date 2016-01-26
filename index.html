@@ -3,13 +3,7 @@ layout: default
 ---
 <h1>Recent Posts</h1>
 <hr/>
-{% for post in site.posts %}
-<div class="post">
-	<h2>{{ post.title }}<small> - {{ post.date | date:"%d/%b/%Y" }}</small></h2>
-	<div class="excerpt">
-		{{ post.excerpt }}...
-	</div>
-	<a class="postlink" href="{{ post.url }}">more</a>
-</div>
+{% for p in site.posts %}
+{% include excerpt.html %}
 {% endfor %}
 <script async type="text/javascript" src="//{{ site.disqus }}.disqus.com/count.js"></script>
