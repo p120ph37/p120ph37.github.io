@@ -1,7 +1,6 @@
 safe: true
 lsi: false
-highlighter: pygments
-markdown: rdiscount
+highlighter: rouge
 source: .
 url: http://thinking.ameriwether.com
 title: Thinking Considered Harmful
